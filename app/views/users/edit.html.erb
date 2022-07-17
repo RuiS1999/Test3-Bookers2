@@ -1,0 +1,14 @@
+<h1>Editing Book</h1>
+<%= form_with model: @user do |f| %>
+  <div>
+    <%= f.label :name %>
+     <%= f.text_field :name %>
+   </div>
+  <div>
+     <%= f.label :introduct %>
+    <%= f.text_area :introduct %>
+   </div>
+   <div>
+      <%= f.submit 'Update User' %>
+  </div>
+<% end %>
