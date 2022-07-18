@@ -1,8 +1,9 @@
+<div>
 <h2>Book detail</h2>
 <table>
   <tbody>
       <tr>
-        <td><%= image_tag @book.user.get_profile_image(50,50) %>
+        <td><%= image_tag @book.user.get_profile_image(100,100) %>
         <br /><%= link_to @user.name, "/users/#{@book.user_id}" %></td>
         <td><%= link_to @book.title, book_path(@book) %></td>
         <td><%= @book.body %></td>
@@ -13,3 +14,4 @@
       </tr>
   </tbody>
 </table>
+</div>

@@ -1,3 +1,18 @@
+<div>
+<h2>User info</h2>
+<%= image_tag user.get_profile_image(100,100) %>
+  <table>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= user.name%></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </table>
+
 <h2>New book</h2>
   <%= form_with model: @book do |f| %>
     <div>
@@ -10,3 +25,4 @@
     </div>
     <div><%= f.submit 'Create Book' %></div>
   <% end %>
+</div>

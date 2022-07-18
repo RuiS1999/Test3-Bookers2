@@ -3,6 +3,7 @@
   <head>
     <title>Bookers2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/a523375639.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,7 +25,13 @@
       <li><%= link_to "Log in", new_user_session_path %></li>
     <% end %>
   </header>
-  <%= yield %>
+  <main>
+    <div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
