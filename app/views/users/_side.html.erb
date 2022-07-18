@@ -1,0 +1,31 @@
+<%= image_tag current_user.get_profile_image(100,100) %>
+  <table>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= current_user.name%></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= current_user.introduction %></th>
+    </tr>
+  </table>
+
+  <div>
+    <%= link_to("", edit_user_path(current_user.id), {class: "fa-solid fa-user-gear"}) %>
+  </div>
+<!--新規投稿-->
+<h2>New book</h2>
+  <%= form_with model: Book.new do |f| %>
+    <div>
+      <h4><%= f.label  :title %></h4>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <h4><%= f.label :body %></h4>
+      <%= f.text_area :body %>
+    </div>
+    <div><%= f.submit 'Create Book' %></div>
+  <% end %>
+</div>
+
