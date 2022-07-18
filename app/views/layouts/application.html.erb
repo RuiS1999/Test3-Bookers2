@@ -18,10 +18,10 @@
         <div class="container">
           <a class="navbar-brand" href="/"><span>Bookers</span></a>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="navbar-collapse collapse show" id="navbarNavDropdown" style>
+          <div class="navbar-collapse collapse" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li><%= link_to "Home", user_path(current_user.id), class: 'nav-link text-light' %></li>
@@ -41,11 +41,7 @@
     </header>
   </header>
   <main>
-    <div class="container">
-      <div class="row">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
   </main>
   <footer>
     <div class="container mt-5">
