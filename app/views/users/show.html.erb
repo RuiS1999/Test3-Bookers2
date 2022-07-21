@@ -1,7 +1,46 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <%= render 'side' %>
+        <!--ユーザー情報-->
+    <div class="col-md-3">
+    <h2>User info</h2>
+    <%= image_tag @user.get_profile_image(100,100) %>
+      <table class="table">
+        <tr></tr>
+        <tr>
+          <th>name</th>
+          <th><%= @user.name %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th><%= @user.introduction %></th>
+        </tr>
+      </table>
 
+    <!--ユーザー情報編集-->
+    <div class="row">
+      <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>
+      <% end %>
+    </div>
+
+    <!--新規投稿-->
+    <h2 class="mt-3">New book</h2>
+      <%= form_with model: Book.new do |f| %>
+        <div class="form-group">
+          <h4>    <%= f.label  :title %></h4>
+          <%= f.text_field :title, class: "form-control book_title" %>
+        </div>
+        <div class="form-group">
+          <h4>    <%= f.label :body, "Opinion" %></h4>
+          <%= f.text_area :body, class: "form-control book_body" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit 'Create Book', class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+
+    <!--詳細画面-->
     <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
     <table class="table table-hover table-inverse">
